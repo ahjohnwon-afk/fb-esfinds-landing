@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EY10TRRBKD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // 配置你的 GA4 ID
+    gtag('config', 'G-EY10TRRBKD');
+  </script>
+
   <meta charset="UTF-8" />
   <title>ESFINDS VIP · Canal Oficial</title>
-
-  <meta property="og:title" content="ESFINDS VIP · Canal Oficial" />
-  <meta property="og:description" content="Únete a nuestra comunidad exclusiva de ofertas" />
-  <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta http-equiv="refresh" content="1.2; url=https://cutt.ly/fb_esfinds" />
+  <script>
+    setTimeout(function() {
+      // 在自动跳转前记录一个自动跳转事件
+      gtag('event', 'auto_redirect', {
+        'event_category': 'Navigation',
+        'event_label': 'WhatsApp Auto Redirect'
+      });
+      window.location.href = "https://cutt.ly/fb_esfinds";
+    }, 1500); 
+  </script>
 
   <style>
     :root {
-      --primary-color: #25D366; /* WhatsApp Green */
+      --primary-color: #25D366; 
       --text-main: #1C1C1E;
       --text-sub: #636366;
     }
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
     body {
       margin: 0;
       height: 100vh;
-      /* 改为清爽的淡灰色渐变，看起来更像官方登录页 */
       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       color: var(--text-main);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -41,7 +52,6 @@
       max-width: 400px;
       padding: 40px 30px;
       text-align: center;
-      /* 磨砂玻璃效果，更有质感 */
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
       border-radius: 24px;
@@ -62,7 +72,6 @@
       box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
     }
 
-    /* 简单的模拟图标 */
     .icon-box::after {
       content: '✓';
       color: white;
@@ -113,32 +122,9 @@
       opacity: 0.9;
     }
 
-    .loading-dots {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      background: #ccc;
-      border-radius: 50%;
-      animation: blink 1.4s infinite both;
-    }
-
-    .dot:nth-child(2) { animation-delay: 0.2s; }
-    .dot:nth-child(3) { animation-delay: 0.4s; }
-
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes blink {
-      0%, 80%, 100% { opacity: 0.3; }
-      40% { opacity: 1; }
     }
   </style>
 </head>
@@ -156,15 +142,10 @@
       Redirigiendo a nuestro grupo oficial de WhatsApp para ofertas exclusivas.
     </div>
 
-    <a class="btn" href="https://cutt.ly/fb_esfinds">
+    <a class="btn" href="https://cutt.ly/fb_esfinds" 
+       onclick="gtag('event', 'whatsapp_join_click', {'event_category': 'Conversion', 'event_label': 'Manual Click'});">
       Unirse ahora
     </a>
-
-    <div class="loading-dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
   </div>
 </body>
 </html>
